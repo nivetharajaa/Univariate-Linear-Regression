@@ -15,18 +15,35 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6.	Obtain the straight line equation Y=mX+b and plot the scatterplot.
 ## Program
 ```
+Developed by : nivetha.a
+RegisterNumber:22003573
 
+import pandas as pd
 
+from sklearn import linear_model
 
+df=pd.read_csv("cars.csv")
 
+x=df[['Weight','Volume']]
 
+y=df['CO2']
+
+regr=linear_model.LinearRegression()
+
+regr.fit(x,y)
+
+print('Coefficients:',regr.coef_)
+
+print('Intercept:',regr.intercept_)
+
+predictedCO2=regr.predict([[1995,522]])
+
+print("Predicted CO2 emissiom based on weight and volume:",predictedCO2)
 
 ```
 ## Output
-</br>
-</br>
-</br>
-</br>
+
+![lmplementation.png](./images/Implementation.png)
 
 ## Result
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares.
